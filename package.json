@@ -1,0 +1,14 @@
+{
+  "name": "first_app",
+  "version": "1.0.0",
+  "description": "First electron app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "zebedee",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^10.1.5"
+  }
+}

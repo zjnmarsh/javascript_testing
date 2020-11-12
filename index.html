@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My first electron app</title>
+    <link rel='stylesheet' href="bootstrap.min.css"
+</head>
+<body>
+    <h1>My first electron app</h1>
+
+    <h2>Subheading</h2>
+    <div id="output"></div>
+    
+</body>
+<script>
+    var name = "zebedee"
+    document.getElementById("output").innerHTML = name
+
+    require('.renderer.js')
+</script>
+</html>
