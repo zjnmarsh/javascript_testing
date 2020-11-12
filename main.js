@@ -18,11 +18,11 @@ function createWindow(){
     mainWindow.loadFile('index.html')
 
     // open devtools
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
 
-    mainWindow.on('closed', () => {
-        mainWindow = null
-    })
+    // mainWindow.on('closed', () => {
+    //     mainWindow = null
+    // })
 }
 
 app.whenReady().then( () => {
