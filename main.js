@@ -1,3 +1,5 @@
+// https://github.com/electron/electron-quick-start/blob/master/main.js
+
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
@@ -6,33 +8,28 @@ let win;
 
 function createWindow(){
     //create browser windw
-    win = new BrowserWindow({
+    const mainWindow = new BrowserWindow({
         width:800, 
         height:600,
         webPreferences: {nodeIntegration:true
         }}) // put logo sometime
 
     // load index.html
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
-        protocol: 'file:',
-        slashes: true
-    }))
+    mainWindow.loadFile('index.html')
 
     // open devtools
-    win.webContents.openDevTools()
+    mainWindow.webContents.openDevTools()
 
-    win.on('closed', () => {
-        win = null
+    mainWindow.on('closed', () => {
+        mainWindow = null
     })
 }
 
-// run create window function
-app.on('ready', createWindow)
-
-// quit when all windows are closed
-app.on('window-all-closed', () => {
-    if(process.platform ==='darwin'){
-        app.quit()
-    }
+app.whenReady().then( () => {
+    createWindow()
 })
+
+app.on('window-all-closed', function () {
+    app.quit()
+})
+
