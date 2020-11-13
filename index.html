@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My cool electron app</title>
+    <title>An electron app</title>
     <link rel='stylesheet' href="bootstrap.min.css"
 </head>
-<body>
-    <h1>My very cool electron app</h1>
+<body style="padding: 10px;">
+    <h1>lectron app</h1>
 
     <h2>Subheading</h2>
     <!-- <div id="output"></div> -->
@@ -15,18 +15,37 @@
 
     <form>
         <input class="form-group" type="text" id="entrybox" name="entrybox">
-        <input class="btn btn-primary" type="button" id="sub_button" value="submit"></button>
+        <input class="btn btn-primary" type="button" id="sub_button" value="submit" onclick="other_func()"></button>
     </form>
     <input class="btn btn-secondary" type="button" value="Other" onclick="location.href='other.html'"></button>
 
+    <form>
+        <p>Susceptible</p>
+        <input class="form-group" type="text" id="s">
+        <p>Infected</p>
+        <input class="form-group" type="text" id="i">
+        <p>Recovered</p>
+        <input class="form-group" type="text" id="r">
+        <p>Infection rate</p>
+        <input class="form-group" type="text" id="beta">
+        <p>Recovery reate</p>
+        <input class="form-group" type="text" id="gamma">
+
+        <input class="btn btn-primary" type="button" id="submit_SIR" value="Submit"></button>
+    </form>
     
+
+
 </body>
 <script>
-    document.getElementById("sub_button").onclick = () => {
-        var name = document.getElementById("entrybox").value
-        // console.log(name)
-        document.getElementById("output").innerHTML = "hello " + name
-    }
+    // document.getElementById("sub_button").onclick = () => {
+    //     var name = document.getElementById("entrybox").value
+    //     // console.log(name)
+    //     document.getElementById("output").innerHTML = "hello " + name
+    // }
+    
     require('./renderer.js')
+    require('./function.js')
 </script>
 </html>
+
